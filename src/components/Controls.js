@@ -1,19 +1,28 @@
-import React from 'react'
-import Grid from "@material-ui/core/Grid"
+import React from "react"
 
-const Controls = ({ models }) => {
+import Grid from "@material-ui/core/Grid"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import Checkbox from "@material-ui/core/Checkbox"
+
+import Card from "./uiComponents/Card"
+
+const Controls = ({ models, setVisibility, mannequin, setMannequinVisibility }) => {
     return (
-        <Grid container direction="column" justify="center">
+        <Grid container justify="center" >
+            <FormControlLabel
+                style={{ textAlign: "center" }}
+                control={
+                    <Checkbox
+                        checked={mannequin}
+                        onChange={setMannequinVisibility}
+                        name="checkedB"
+                        color="primary"
+                    />
+                }
+                label="Mannequin"
+            />
             {
-                models.map(({ name, thumbnail, description }) => {
-                    return (
-                        <div>
-                            <img alt="Mask" width={150} src={thumbnail} />
-                            <h3>{name}</h3>
-                            <p>{description}</p>
-                        </div>
-                    )
-                })
+                models.map(({ name, thumbnail, description }, key) => <Card setVisibility={setVisibility} key={key} name={name} thumbnail={thumbnail} description={description} />)
             }
         </Grid>
     )

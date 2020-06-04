@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Grid from "@material-ui/core/Grid"
 
 import Canvas from "./components/Canvas"
 import Controls from "./components/Controls"
 
-const models = [{
+
+
+const m = [{
   visible: true,
   position: [0, 0, 0],
   name: "Monster Mask",
@@ -25,13 +27,33 @@ const models = [{
 }]
 
 const App = () => {
+  const [models, setModels] = useState(m)
+  const [mannequin, setMannequin] = useState(true)
+
+  const setMannequinVisibility = () => setMannequin(!mannequin)
+
+  const setVisibility = selectedName => {
+    const newModels = models.map(model => {
+      if (selectedName === model.name) model.visible = true
+      else model.visible = false
+
+      return model
+    })
+    setModels(newModels)
+  }
+
   return (
     <Grid container direction="row" justify="center" style={{ height: "100vh", width: "100vw" }}>
-      <Grid item xs={8}>
-        <Canvas models={models} />
+      <Grid item lg={8} md={8} xs={12}>
+        <Canvas models={models} mannequin={mannequin} />
       </Grid>
-      <Grid item xs={4} style={{ backgroundColor: "red" }}>
-        <Controls models={models} />
+      <Grid item lg={4} md={4} xs={12} style={{ opacity: 1, overflow: "scroll" }}>
+        <Controls
+          models={models}
+          setVisibility={setVisibility}
+          mannequin={mannequin}
+          setMannequinVisibility={setMannequinVisibility}
+        />
       </Grid>
     </Grid>
   )
