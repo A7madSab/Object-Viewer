@@ -1,8 +1,9 @@
 import React, { Suspense } from "react"
 
 import { VRCanvas } from "react-xr"
-import { OrbitControls, Sky, Stars, Plane, Text } from "drei"
+import { OrbitControls, Sky, Stars, Plane, Text, HTML } from "drei"
 import Model from "./buildComponents/ModelGLTF.js"
+import Controls from "./Controls"
 
 const Fallback = () => (
     <Text
@@ -11,7 +12,7 @@ const Fallback = () => (
         Loading
     </Text>
 )
-const MyCanvas = ({ models, mannequin }) => {
+const MyCanvas = ({ models, mannequin, setVisibility, setMannequinVisibility }) => {
     return (
         <VRCanvas camera={{ position: [-15, 0, 0] }}>
             <fog attach="fog" args={["#dde5e7", 25, 100]} />
@@ -32,6 +33,21 @@ const MyCanvas = ({ models, mannequin }) => {
             <OrbitControls />
             <ambientLight />
             <spotLight position={[5, 5, 5]} penumbra={1} />
+
+            <HTML
+                prepend
+                center
+                fullscreen
+                scaleFactor={11}
+                zIndexRange={[0, 100]}
+            >
+                <Controls
+                    models={models}
+                    setVisibility={setVisibility}
+                    mannequin={mannequin}
+                    setMannequinVisibility={setMannequinVisibility}
+                />
+            </HTML>
         </VRCanvas>
     )
 }

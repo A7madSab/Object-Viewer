@@ -1,11 +1,7 @@
 import React, { useState } from "react"
 
 import Grid from "@material-ui/core/Grid"
-
 import Canvas from "./components/Canvas"
-import Controls from "./components/Controls"
-
-
 
 const m = [{
   visible: true,
@@ -44,17 +40,12 @@ const App = () => {
 
   return (
     <Grid container direction="row" justify="center" style={{ height: "100vh", width: "100vw" }}>
-      <Grid item lg={8} md={8} xs={12}>
-        <Canvas models={models} mannequin={mannequin} />
-      </Grid>
-      <Grid item lg={4} md={4} xs={12} style={{ opacity: 1, overflow: "scroll" }}>
-        <Controls
-          models={models}
-          setVisibility={setVisibility}
-          mannequin={mannequin}
-          setMannequinVisibility={setMannequinVisibility}
-        />
-      </Grid>
+      <Canvas
+        models={models}
+        mannequin={mannequin}
+        setVisibility={setVisibility}
+        setMannequinVisibility={setMannequinVisibility}
+      />
     </Grid>
   )
 }
