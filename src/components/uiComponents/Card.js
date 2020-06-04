@@ -29,7 +29,7 @@ const MyCard = ({ name, thumbnail, description, setVisibility }) => {
                     className={classes.media}
                 />
                 <CardContent>
-                    <Typography align="center" gutterBottom variant="h5" component="h2">{name}</Typography>
+                    <Typography align="center" gutterBottom variant="h5" component="h2">{name}, 75 EGP</Typography>
                     <Typography align="center" variant="body2" color="textSecondary" component="p">{description}</Typography>
                 </CardContent>
             </CardActionArea>
