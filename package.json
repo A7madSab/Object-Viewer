@@ -15,6 +15,10 @@
     "react-xr": "^1.0.6",
     "three": "^0.117.1"
   },
+  "engines": {
+    "yarn": "1.22.0",
+    "node": "10.19.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
