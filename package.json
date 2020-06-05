@@ -16,10 +16,9 @@
     "three": "^0.117.1"
   },
   "scripts": {
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "serve": "git add -A && git commit -m 'Tweeks' && git push origin master && heroku logs -tail -a maskr",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
