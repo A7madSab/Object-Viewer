@@ -19,7 +19,7 @@ const Controls = ({ models, setVisibility, mannequin, setMannequinVisibility }) 
             />
             <Button>Order</Button>
             {
-                models.map(({ name, thumbnail, description }, key) => <Card setVisibility={setVisibility} key={key} name={name} thumbnail={thumbnail} description={description} />)
+                models.map(({ name, thumbnail, description, price }, key) => <Card key={key} price={price} setVisibility={setVisibility} name={name} thumbnail={thumbnail} description={description} />)
             }
         </Grid>
     )

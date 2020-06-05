@@ -3,10 +3,12 @@ import React, { useState, Suspense } from "react"
 import { OrbitControls, Sky, Stars, Plane, Text, HTML } from "drei"
 import Model from "./components/buildComponents/ModelGLTF.js"
 import Controls from "./components/Controls"
+import Text3D from "./components/buildComponents/Text"
 import Grid from "@material-ui/core/Grid"
 import { VRCanvas } from "react-xr"
 
 const m = [{
+  price: 50,
   visible: true,
   position: [0, 0, 0],
   name: "Monster Mask",
@@ -14,8 +16,8 @@ const m = [{
   thumbnail: "/monster Mask.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
-},
-{
+}, {
+  price: 50,
   visible: false,
   position: [0, 0, 0],
   name: "African Mask",
@@ -27,7 +29,7 @@ const m = [{
 
 const App = () => {
   const [models, setModels] = useState(m)
-  const [mannequin, setMannequin] = useState(true)
+  const [mannequin, setMannequin] = useState(false)
 
   const setMannequinVisibility = () => setMannequin(!mannequin)
 
@@ -41,9 +43,7 @@ const App = () => {
   }
 
   const Fallback = () => (
-    <Text
-      rotation={[0, (3 * Math.PI / 2), 0]}
-      color="black" anchorX="center" anchorY="middle" fontSize={1}>
+    <Text rotation={[0, (3 * Math.PI / 2), 0]} color="black" anchorX="center" anchorY="middle" fontSize={1}>
       Loading
     </Text>
   )
@@ -77,7 +77,12 @@ const App = () => {
         {/* Mannequin */}
         {mannequin ? <Model path="mannequin Head.glb" /> : null}
 
-        {/* Control */}
+        {/* Text */}
+        <Suspense fallback={null}>
+          <Text3D text="M a s k r" position={[50, 0, -17]} scale={6} />
+        </Suspense>
+
+        {/* Controls */}
         <HTML prepend center fullscreen scaleFactor={11}>
           <Controls
             models={models}
@@ -88,7 +93,7 @@ const App = () => {
         </HTML>
 
       </VRCanvas>
-    </Grid>
+    </Grid >
   )
 }
 
