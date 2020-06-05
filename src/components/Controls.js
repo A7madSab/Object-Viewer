@@ -17,7 +17,11 @@ const Controls = ({ models, setVisibility, mannequin, setMannequinVisibility }) 
                 }
                 label="Mannequin"
             />
-            <Button>Order</Button>
+            <Button>
+                <a style={{ color: "black", textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://forms.gle/3WxcwZdVsM5pMBgS8">
+                    Order
+                </a>
+            </Button>
             {
                 models.map(({ name, thumbnail, description, price }, key) => <Card key={key} price={price} setVisibility={setVisibility} name={name} thumbnail={thumbnail} description={description} />)
             }

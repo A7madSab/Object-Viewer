@@ -1,5 +1,5 @@
 {
-  "name": "mask",
+  "name": "maskr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +19,7 @@
     "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "serve": "git add -A && git commit -m 'Tweeks' && git push origin master && heroku logs -tail -a maskr",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
