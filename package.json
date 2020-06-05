@@ -15,14 +15,11 @@
     "react-xr": "^1.0.6",
     "three": "^0.117.1"
   },
-  "engines": {
-    "yarn": "1.22.0",
-    "node": "10.19.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "serve": "git add -A && git commit -m 'Tweeks' && git push origin master && heroku logs -tail -a maskr",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
