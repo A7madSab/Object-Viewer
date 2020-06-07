@@ -3,6 +3,7 @@ import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -21,12 +22,14 @@ const MyCard = ({ name, thumbnail, description, setVisibility, price }) => {
     return (
         <Card className={classes.root}>
             <CardActionArea onClick={() => setVisibility(name)}>
-                <img
-                    alt="mask"
-                    title="name"
-                    src={thumbnail}
-                    className={classes.media}
-                />
+                <Grid container justify="center">
+                    <img
+                        alt="mask"
+                        title="name"
+                        src={thumbnail}
+                        className={classes.media}
+                    />
+                </Grid>
                 <CardContent>
                     <Typography align="center" gutterBottom variant="h5" component="h3">{name}, {price} EGP</Typography>
                     <Typography align="center" variant="body2" color="textSecondary" component="p">{description}</Typography>
