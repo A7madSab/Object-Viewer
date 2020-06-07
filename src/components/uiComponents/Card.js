@@ -7,13 +7,12 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 220,
         margin: 15
     },
     media: {
+        padding: 5,
         height: 140,
-        alignItems: "center",
-        textAlign: "center"
     }
 })
 
@@ -29,7 +28,7 @@ const MyCard = ({ name, thumbnail, description, setVisibility, price }) => {
                     className={classes.media}
                 />
                 <CardContent>
-                    <Typography align="center" gutterBottom variant="h5" component="h2">{name}, {price} EGP</Typography>
+                    <Typography align="center" gutterBottom variant="h5" component="h3">{name}, {price} EGP</Typography>
                     <Typography align="center" variant="body2" color="textSecondary" component="p">{description}</Typography>
                 </CardContent>
             </CardActionArea>

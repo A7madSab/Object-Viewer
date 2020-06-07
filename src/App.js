@@ -25,6 +25,24 @@ const m = [{
   thumbnail: "african-Mask.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
+}, {
+  price: 50,
+  visible: false,
+  position: [0, 0, 0],
+  name: "Vampire",
+  path: "/vampire.glb",
+  thumbnail: "vampire.png",
+  rotation: [0, (3 * Math.PI / 2), 0],
+  description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
+}, {
+  price: 50,
+  visible: false,
+  position: [0, 0, 0],
+  name: "Sweets",
+  path: "/sweets.glb",
+  thumbnail: "sweets.png",
+  rotation: [0, (3 * Math.PI / 2), 0],
+  description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
 }]
 
 const App = () => {
@@ -84,12 +102,15 @@ const App = () => {
 
         {/* Controls */}
         <HTML prepend center fullscreen scaleFactor={11}>
-          <Controls
-            models={models}
-            setVisibility={setVisibility}
-            mannequin={mannequin}
-            setMannequinVisibility={setMannequinVisibility}
-          />
+          <Grid>
+            <Controls
+              models={models}
+              setVisibility={setVisibility}
+              mannequin={mannequin}
+              setMannequinVisibility={setMannequinVisibility}
+            />
+
+          </Grid>
         </HTML>
 
       </VRCanvas>
