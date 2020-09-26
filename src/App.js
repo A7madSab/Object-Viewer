@@ -12,8 +12,8 @@ const m = [{
   visible: true,
   position: [0, 0, 0],
   name: "Monster Mask",
-  path: "/monster Mask.glb",
-  thumbnail: "/monster Mask.png",
+  path: "/objs/monster Mask.glb",
+  thumbnail: "/imgs/monster Mask.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
 }, {
@@ -21,8 +21,8 @@ const m = [{
   visible: false,
   position: [0, 0, 0],
   name: "African Mask",
-  path: "/african Mask.glb",
-  thumbnail: "african-Mask.png",
+  path: "/objs/african Mask.glb",
+  thumbnail: "/imgs/african-Mask.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
 }, {
@@ -30,8 +30,8 @@ const m = [{
   visible: false,
   position: [0, 0, 0],
   name: "Vampire",
-  path: "/vampire.glb",
-  thumbnail: "vampire.png",
+  path: "/objs/vampire.glb",
+  thumbnail: "/imgs/vampire.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
 }, {
@@ -39,8 +39,8 @@ const m = [{
   visible: false,
   position: [0, 0, 0],
   name: "Sweets",
-  path: "/sweets.glb",
-  thumbnail: "sweets.png",
+  path: "/objs/sweets.glb",
+  thumbnail: "/imgs/sweets.png",
   rotation: [0, (3 * Math.PI / 2), 0],
   description: "Esse elit cillum officia qui veniam est minim aliqua in ipsum eiusmod in nulla magna.",
 }]
@@ -93,7 +93,7 @@ const App = () => {
         }
 
         {/* Mannequin */}
-        {mannequin ? <Model path="mannequin Head.glb" /> : null}
+        {mannequin ? <Model path="/objs/mannequin Head.glb" /> : null}
 
         {/* Text */}
         <Suspense fallback={null}>

@@ -1,21 +1,20 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from "react"
+
+import img from "../../images/logo512.png"
 import { useLoader } from "react-three-fiber"
 import { TextureLoader } from "three"
-import img from "../../images/logo512.png"
-
 
 const Texture = () => {
-    const texture = useMemo(() => new TextureLoader().load(img), [img]);
+    const texture = useMemo(() => new TextureLoader().load(img), [img])
 
     return (
         <mesh receiveShadow>
-            <boxGeometry attach='geometry' args={[5, 5, 5]} />
+            <boxGeometry attach="geometry" args={[5, 5, 5]} />
             <meshStandardMaterial
-                attach='material'
+                attach="material"
                 map={texture}
             />
         </mesh>
-
     )
 }
 
