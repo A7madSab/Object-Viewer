@@ -13,7 +13,7 @@
     "react-scripts": "3.4.1",
     "react-three-fiber": "^4.2.8",
     "react-xr": "^1.0.6",
-    "three": "^0.117.1"
+    "three": "^0.125.0"
   },
   "scripts": {
     "start": "set HTTPS=true&&react-scripts start",
